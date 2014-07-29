@@ -77,6 +77,9 @@ module Bubblebath
           log.warn ("HTTP STATUS: '#{status_code}', MESSAGE: '#{fault_message}'")
         elsif status_code.between?(200, 299) and @response.body.values[0].nil?
           log.warn("HTTP STATUS: '#{status_code}', MESSAGE: '#{nil_response}'")
+        elsif status_code.between?(200, 299)
+          # DO NOTHING
+          log.debug("HTTP STATUS: '#{status_code}', MESSAGE: '#{nil_response}'")
         else
           raise "HTTP STATUS: '#{status_code}', MESSAGE: ' #{@http_client.http_response.reason}'"
         end
