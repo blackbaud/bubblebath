@@ -26,7 +26,9 @@ BubbleBath Gli Generator
 
     Getting Started
     ---
-    Generating a new Bubblebath project is easy. We've taken advantage of several built-in Ruby classes in order to give you a head start and create most of the scaffolding that we've found useful in developing tests against our own websites.
+    Generating a new Bubblebath project is easy. We've taken advantage of several 
+    built-in Ruby classes in order to give you a head start and create most of the 
+    scaffolding that we've found useful in developing tests against our own websites.
 
     ```bash
     # develop mode
