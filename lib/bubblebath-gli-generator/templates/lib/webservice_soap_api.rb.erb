@@ -1,0 +1,25 @@
+module <%= BubblebathGliGenerator::Project.camelize(BubblebathGliGenerator::Project.project_name)%>
+    module SoapApi
+<% BubblebathGliGenerator::Project.service_keys.each do |service_key| %>  <% BubblebathGliGenerator::Project.services.values_at(service_key).each do |service_value| %><% service_value.values_at(:ports).each do |port| %><% port.keys.each do |port_key| %>
+        class <% if port.keys.index(port_key) == 0%><%= service_key %>Client<%else%><%= service_key %>Client<%= port.keys.index(port_key) + 1 %><%end%> < Bubblebath::SoapApi::SoapClient
+
+            def local_wsdl
+                wsdl_name = 'Enter local path here'
+                file.expand_path(wsdl_name, File.dirname(__FILE__))
+            end
+
+            def wsdl
+                <% port.values_at(port_key).each do |info| %><% info.values_at(:location).each do |location| %>@wsdl = '<%= location%>?wsdl'<% end %><%end %>
+            end
+
+            def service
+                @service = :<%= service_key %>
+            end
+
+            def port
+                @port = :<%= port_key%>
+            end
+        end
+        <% end %><% end %><% end %><% end %>
+    end
+end

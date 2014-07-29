@@ -1,0 +1,11 @@
+#Include your protocols here
+def include_api(protocol)
+    case protocol.upcase
+        when 'SOAP'
+            puts 'INFO: using SoapApi'
+            include <%= BubblebathGliGenerator::Project.capcase(BubblebathGliGenerator::Project.project_name) %>::SoapApi
+        else
+            puts 'WARN: protocol was not defined in config defaulting to SOAP'
+            include <%= BubblebathGliGenerator::Project.capcase(BubblebathGliGenerator::Project.project_name) %>::SoapApi
+    end
+end

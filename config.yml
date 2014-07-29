@@ -1,0 +1,16 @@
+# DEBUG, INFO, WARN, ERROR, FATAL, UNKNOWN
+loglevel:                     INFO
+
+# LOG_FILE, CONSOLE, BOTH
+logging_location:                 BOTH
+
+verify_ssl:                   true
+soap_schema_compliance:       false
+java_home:                    '/Library/Java/Home'
+
+log_file:                     'bubblebath.logs'
+
+# BasicAuth credentials
+verify_ssl:                    false
+basic_auth_username:           user
+basic_auth_password:           passwd

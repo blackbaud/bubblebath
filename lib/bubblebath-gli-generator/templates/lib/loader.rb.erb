@@ -1,0 +1,15 @@
+require '<%= BubblebathGliGenerator::Project.camelize(name) %>/loader'
+module <%= BubblebathGliGenerator::Project.camelize(name) %>
+  class Loader
+    class << self
+      @@loaded = {}
+
+      def load_workflow(name)
+        load_files name, "*{_view}.rb"
+        load_files name, "*{_model}.rb"
+        load_files name, "*{_controller}.rb"
+        load_files name, "*.rb"
+      end
+    end
+  end
+end

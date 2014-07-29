@@ -1,0 +1,25 @@
+module <%= BubblebathGliGenerator::Project.camelize(BubblebathGliGenerator::Project.project_name)%>
+    module <%= BubblebathGliGenerator::Project.service_key %>Client<% if !BubblebathGliGenerator::Project.version_number.nil? && BubblebathGliGenerator::Project.version_number > 0 %><%= BubblebathGliGenerator::Project.version_number %><% end %>
+        module SoapApi
+        <% BubblebathGliGenerator::Project.operations[[BubblebathGliGenerator::Project.service_key, BubblebathGliGenerator::Project.port_key]].each do |class_name| %>
+            class <%= class_name %> < <%= BubblebathGliGenerator::Project.service_key %>Client<% if !BubblebathGliGenerator::Project.version_number.nil? && BubblebathGliGenerator::Project.version_number > 0 %><%= BubblebathGliGenerator::Project.version_number %><% end %><%if BubblebathGliGenerator::Project.operation_params[[BubblebathGliGenerator::Project.service_key, BubblebathGliGenerator::Project.port_key, class_name]].any?%>
+                attr_accessor <% BubblebathGliGenerator::Project.operation_params[[BubblebathGliGenerator::Project.service_key, BubblebathGliGenerator::Project.port_key, class_name]].each do |param_instance_variable|%>:<%= BubblebathGliGenerator::Project.underscore(param_instance_variable)%><% if param_instance_variable != BubblebathGliGenerator::Project.operation_params[[BubblebathGliGenerator::Project.service_key, BubblebathGliGenerator::Project.port_key, class_name]].last %>,<%end%> <%end%><% end %>
+
+                def initialize(options=nil)
+                  super<% BubblebathGliGenerator::Project.operation_params[[BubblebathGliGenerator::Project.service_key, BubblebathGliGenerator::Project.port_key, class_name]].each do |param_instance_variable|%>
+                  @<%= BubblebathGliGenerator::Project.underscore(param_instance_variable) %> ||= options[:<%= BubblebathGliGenerator::Project.underscore(param_instance_variable) %>] unless options == nil<% end %>
+                end
+
+                def body
+                    { <%= class_name %>Request: {<% if BubblebathGliGenerator::Project.operation_params[[BubblebathGliGenerator::Project.service_key, BubblebathGliGenerator::Project.port_key, class_name]].any? %><% BubblebathGliGenerator::Project.operation_params[[BubblebathGliGenerator::Project.service_key, BubblebathGliGenerator::Project.port_key, class_name]].each do |param_instance_variable| -%><%= param_instance_variable %>: <%= BubblebathGliGenerator::Project.underscore(param_instance_variable) %><% if param_instance_variable != BubblebathGliGenerator::Project.operation_params[[BubblebathGliGenerator::Project.service_key, BubblebathGliGenerator::Project.port_key, class_name]].last %>, <% end %><% end %><% end %>} }
+                end
+
+                def result
+                    request.body[:<%= BubblebathGliGenerator::Project.underscore(class_name) %>_response]
+                end
+
+            end
+        <%end%>
+        end
+    end
+end

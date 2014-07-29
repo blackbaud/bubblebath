@@ -1,0 +1,6 @@
+require 'bubblebath/configuration'
+
+Bubblebath::Configuration.instance.defaults = {
+  :configfile => "#{File.dirname(__FILE__) + '/../..'}/config.yml",
+}
+Bubblebath::Configuration.instance.reload

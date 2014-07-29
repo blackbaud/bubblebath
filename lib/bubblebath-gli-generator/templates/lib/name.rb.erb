@@ -1,0 +1,7 @@
+module <%= BubblebathGliGenerator::Project.camelize(name) %>; end
+
+require '<%= name.downcase %>/configuration'
+require '<%= name.downcase %>/loader'
+require '<%= name.downcase %>/core_libraries'
+require '<%= name.downcase %>/workflows'
+
