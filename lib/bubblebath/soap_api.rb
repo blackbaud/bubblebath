@@ -58,13 +58,13 @@ module Bubblebath
       end
 
       def fault_exists?
-        run if @response.nil?
+        request if @response.nil?
         log.info("INFO: SOAP request: #{@response.body}")
         @response.body.has_key?(:fault) ? true : false
       end
 
       def fault_message
-        run if @response.nil?
+        request if @response.nil?
         log.info("INFO: SOAP request.body: #{@response.body}")
         fault_exists? ? @response.body[:fault][:faultstring] : nil
       end
@@ -78,7 +78,7 @@ module Bubblebath
         elsif status_code.between?(200, 299) and @response.body.values[0].nil?
           log.warn("HTTP STATUS: '#{status_code}', MESSAGE: '#{nil_response}'")
         else
-          log.warn("HTTP STATUS: '#{status_code}', MESSAGE: ' #{@http_client.http_response.reason}'")
+          raise "HTTP STATUS: '#{status_code}', MESSAGE: ' #{@http_client.http_response.reason}'"
         end
 
         @response
