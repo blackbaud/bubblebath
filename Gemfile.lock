@@ -21,11 +21,11 @@ GIT
 PATH
   remote: .
   specs:
-    bubblebath (0.50.15)
+    bubblebath (0.50.18)
       gli (= 2.10.0)
-      hashdiff (~> 0.2.0)
-      httparty
-      xml-simple (~> 1.1.3)
+      hashdiff (~> 0.2.1)
+      httparty (~> 0.13.1)
+      xml-simple (~> 1.1.4)
 
 GEM
   remote: https://rubygems.org/
@@ -162,17 +162,17 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  aruba
+  aruba (~> 0.6.0)
   bubblebath!
   bundler
-  coveralls
-  hashdiff
-  httparty
+  coveralls (~> 0.7.0)
+  hashdiff (~> 0.2.1)
+  httparty (~> 0.13.1)
   rake (~> 10.1)
-  rdoc
+  rdoc (~> 4.1.1)
   rspec (= 2.12.0)
   savon!
-  simplecov
+  simplecov (~> 0.9.0)
   soapui-util (~> 0.47.0)!
-  webmock
-  xml-simple
+  webmock (~> 1.18.0)
+  xml-simple (~> 1.1.4)

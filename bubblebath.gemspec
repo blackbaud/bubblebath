@@ -26,13 +26,13 @@ spec = Gem::Specification.new do |s|
   s.bindir                        = 'bin'
   s.executables                   = 'bubblebath-gli-generator'
 
-  s.add_dependency('httparty')
-  s.add_dependency('xml-simple', ['~>1.1.3'])
-  s.add_dependency('hashdiff', ['~>0.2.0'])
-  s.add_dependency('gli','2.10.0')
+  s.add_runtime_dependency('httparty', ['~> 0.13.1'])
+  s.add_runtime_dependency('xml-simple', ['~> 1.1.4'])
+  s.add_runtime_dependency('hashdiff', ['~>0.2.1'])
+  s.add_runtime_dependency('gli','2.10.0')
   s.add_development_dependency('rake', ['~>10.1'])
   s.add_development_dependency('rspec', ['~>2.12'])
-  s.add_development_dependency('webmock', ['~>1.17.3'])
-  s.add_development_dependency('rdoc')
-  s.add_development_dependency('aruba')
+  s.add_development_dependency('webmock', ['~> 1.18.0'])
+  s.add_development_dependency('rdoc', ['~> 4.1.1'])
+  s.add_development_dependency('aruba', ['~> 0.6.0'])
 end
