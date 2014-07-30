@@ -35,4 +35,5 @@ spec = Gem::Specification.new do |s|
   s.add_development_dependency('webmock', ['~> 1.18.0'])
   s.add_development_dependency('rdoc', ['~> 4.1.1'])
   s.add_development_dependency('aruba', ['~> 0.6.0'])
+  s.add_development_dependency('bundler')
 end

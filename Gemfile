@@ -13,11 +13,11 @@ gem 'hashdiff', '~> 0.2.1'
 
 
 group :development do
-  gem 'bundler'
+  # gem 'bundler'
 
   #gem 'rdoc', '~> 4.1.1'
-  gem 'rspec', '2.12.0'
+  # gem 'rspec', '2.12.0'
 
   gem 'soapui-util', '~>0.47.0', :github => 'sandwichclub/soapui-util'
-  gem 'webmock', '~> 1.18.0'
+  # gem 'webmock', '~> 1.18.0'
 end
