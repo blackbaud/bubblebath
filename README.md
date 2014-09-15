@@ -28,16 +28,9 @@ BubbleBath Gli Generator
     ---
     To generate a new project:
 
-    ```bash
-    # develop mode
     ##check current version
-    bundle exec bin/bubblebath-gli-generator -v
-    ## Or
-    $ bundle exec bin/bubblebath-gli-generator --version
-    ```
+    `bundle exec bin/bubblebath-gli-generator -v
 
-    ```bash
-    # develop mode
+
     ##create a new project
-    $ bundle exec bin/bubblebath-gli-generator new my_test_project
-    ```
+    `bundle exec bin/bubblebath-gli-generator new my_soap_test_project
