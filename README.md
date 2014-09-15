@@ -22,7 +22,7 @@ Structure
     MyOperation < MyApplicationRestClient`
 
 BubbleBath Gli Generator
-    ===================
+===================
 
     Getting Started
     ---
