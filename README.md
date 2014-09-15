@@ -26,9 +26,7 @@ BubbleBath Gli Generator
 
     Getting Started
     ---
-    Generating a new Bubblebath project is easy. We've taken advantage of several 
-    built-in Ruby classes in order to give you a head start and create most of the 
-    scaffolding that we've found useful in developing tests against our own websites.
+    To generate a new project:
 
     ```bash
     # develop mode
@@ -42,18 +40,4 @@ BubbleBath Gli Generator
     # develop mode
     ##create a new project
     $ bundle exec bin/bubblebath-gli-generator new my_test_project
-    ```
-
-    ```bash
-    # develop mode
-    ##create a new mvc in the my_test_project directory
-    $ cd my_test_project
-    $ bundle exec ../bin/bubblebath-gli-generator mvc search homepage
-    ```
-
-    ```bash
-    ## ---(Not yet Implemented)---
-    ## Production mode
-    $ gem install bubblebath-gli-generator
-    $ bubblebath-gli-generator new my_test_project
     ```
