@@ -5,8 +5,9 @@ BubbleBath
 
 
  * https://github.com/sandwichclub/bubblebath
- * library for interfacing with SOAP and REST web services
+ * library for interfacing with SOAP web services
  * leverages SoapUI's powerful schema compliance engine for soap message assertions
+ * supports REST too - but implementation is incomplete
 
 
 Structure
