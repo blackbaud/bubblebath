@@ -29,7 +29,7 @@ module Bubblebath
         @service ||= service
         @port ||= port
 
-        log.info("INFO: wsdl: #{@wsdl}")
+        log.debug("DEBUG: wsdl: #{@wsdl}")
         log.debug("DEBUG: request options: #{@options.inspect}")
       end
 
@@ -59,13 +59,13 @@ module Bubblebath
 
       def fault_exists?
         request if @response.nil?
-        log.info("INFO: SOAP request: #{@response.body}")
+        log.debug("DEBUG: SOAP request: #{@response.body}")
         @response.body.has_key?(:fault) ? true : false
       end
 
       def fault_message
         request if @response.nil?
-        log.info("INFO: SOAP request.body: #{@response.body}")
+        log.debug("DEBUG: SOAP request.body: #{@response.body}")
         fault_exists? ? @response.body[:fault][:faultstring] : nil
       end
 
