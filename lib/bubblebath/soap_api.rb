@@ -123,7 +123,7 @@ module Bubblebath
       def create_client
         savon_http_client = create_http_client
         savon_http_client.client.ssl_config.verify_mode = OpenSSL::SSL::VERIFY_NONE unless @verify_ssl
-        savon_http_client.client.ssl_config.ssl_version = :TLSv1
+        savon_http_client.client(ssl_version: :TLSv1_1)
         savon_http_client.client.ssl_config.add_trust_ca(local_ssl_ca_file) unless local_ssl_ca_file == nil
         savon_http_client.client.set_auth(basic_auth_domain, basic_auth_username, basic_auth_password)
 
