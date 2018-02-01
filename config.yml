@@ -12,5 +12,6 @@ log_file:                     'bubblebath.logs'
 
 # BasicAuth credentials
 verify_ssl:                    false
+ssl_version:                   'TLSv1_1'
 basic_auth_username:           user
 basic_auth_password:           passwd
