@@ -97,7 +97,7 @@ module Bubblebath
 
     # This will read in ANY variable set in a configuration file
     def read_from_file
-      return unless File.exists?(configfile.to_s)
+      return unless File.exist?(configfile.to_s)
       filename = File.expand_path(configfile)
       case File.extname filename
         when ".yml"
